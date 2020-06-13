@@ -3,7 +3,9 @@ const connection = require('../database/connection');
 module.exports = {
     // Listing route for all flights
     async index (request, response) {
-        const flights = await connection('flights').select('*');
+        const { page = 1 } = request.query;
+
+        const flights = await connection('flights').limit(5).offset((page - 1) * 5).select('*');
 
         return response.json(flights);
     },
