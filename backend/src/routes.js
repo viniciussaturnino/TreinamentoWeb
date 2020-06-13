@@ -9,5 +9,6 @@ routes.post('/airlines', AirlineController.create);
 
 routes.get('/flights', FlightController.index);
 routes.post('/flights', FlightController.create);
+routes.delete('/flights/:id', FlightController.delete);
 
 module.exports = routes;

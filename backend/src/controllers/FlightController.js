@@ -22,6 +22,22 @@ module.exports = {
         })
 
         return response.json({ id });
+    },
+
+    // Delete route for specific flight
+    async delete (request, response) {
+        const { id } = request.params;
+        const airline_id = request.headers.authorization;
+
+        const flight = await connection('flights').where('id', id).select('airline_id').first();
+
+        if(flight.airline_id !== airline_id){
+            return response.status(401).json({ error: 'Operation not permited' });
+        }
+
+        await connection('flights').where('id', id).delete();
+
+        return response.status(204).send();
     }
 
 }
