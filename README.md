@@ -1,5 +1,4 @@
 # FGAirlines 2.0
 
 ## 
-This repo is a new version from de FGAirlines developed in OO on my third semester using Ruby on Rails. Now i will use Node.js for backend and ReactJS for frontend.
-This is will be used for Web Development training.
+Repositório destinado a desenvolver um treinamento de Desenvolvimento Web em ReactJS e NodeJS. Essa é uma atualização de um projeto antigo, feito na disciplina de Orientação a Objetos usando Ruby on Rails e agora mudando para NodeJS.
