@@ -2,7 +2,7 @@ import React from 'react';
 import { FiUserPlus } from 'react-icons/fi';
 import './styles.css';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/big-logo.svg';
 import plane from '../../assets/big-plane.svg'
 
 export default function Login() {
@@ -15,7 +15,7 @@ export default function Login() {
                     <h1>Faça seu login</h1>
 
                     <input placeholder="Sua ID" />
-                    <button type="submit">Entrar</button>
+                    <button className="button" type="submit">Entrar</button>
 
                     <a href="/register">
                         <FiUserPlus size={16} color="#17333C" />
