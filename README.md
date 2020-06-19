@@ -1,6 +1,6 @@
 # FGAirlines 2.0
 
-## Treinamento de Desenvolvimento Web EletronJun: Vinicius Saturnino e Mateus Gomes
+**Treinamento de Desenvolvimento Web EletronJun: Vinicius Saturnino e Mateus Gomes**
 
 Essa é uma aplicação desenvolvida usando **Node JS** para o backend e **React JS** para o frontend. A aplicação se resume em um simples sistema de cadastro de linhas aéreas na plataforma e cadastro de voos pelas suas determinadas linhas.
 
