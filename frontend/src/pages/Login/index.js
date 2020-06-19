@@ -24,7 +24,7 @@ export default function Login() {
                 </form>
             </section>
 
-            <img src={plane} alt="Airplane" />
+            <img className="big-plane" src={plane} alt="Airplane" />
         </div>
     );
 }
