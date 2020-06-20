@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 
 import './styles.css';
 
-import logo from '../../assets/big-logo.svg';
+import logo from '../../assets/logo.svg';
 
 export default function Register() {
     return (
@@ -16,9 +16,9 @@ export default function Register() {
                     <h1>Cadastro</h1>
                     <p>Cadastre sua linha aérea e começe a ajudar pessoas a encontrarem suas promoções agora mesmo!</p>
 
-                    <Link className="back-link" to="/register">
+                    <Link className="back-link" to="/">
                         <FiArrowLeft size={16} color="#17333C" />
-                        Não tem cadastro? Registre-se
+                        Voltar
                     </Link>
                 </section>
 
@@ -28,7 +28,7 @@ export default function Register() {
                     <input placeholder="Cidade" />
                     <div className="form-group">
                         <input placeholder="UF" style={{ width: 80 }} />
-                        <button className="button" type="submit">Cadastrar</button>
+                        <button type="submit">Cadastrar</button>
                     </div>
                     
                         
