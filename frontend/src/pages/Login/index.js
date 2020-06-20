@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiUserPlus } from 'react-icons/fi';
 import './styles.css';
 
@@ -17,10 +18,10 @@ export default function Login() {
                     <input placeholder="Sua ID" />
                     <button className="button" type="submit">Entrar</button>
 
-                    <a href="/register">
+                    <Link className="back-link" to="/register">
                         <FiUserPlus size={16} color="#17333C" />
                         Não tem cadastro? Registre-se
-                    </a>
+                    </Link>
                 </form>
             </section>
 
