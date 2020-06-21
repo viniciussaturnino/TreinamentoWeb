@@ -14,7 +14,7 @@ export default function Flights() {
                 
                 <Link className="button" to="/flights/new">Cadastrar novo voo</Link>
                 <button type="button">
-                    <FiPower size={18} color="#17333C" />
+                    <FiPower size={24} color="#ffffff" />
                 </button>
             </header>
 
