@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
 
 import './styles.css';
@@ -11,6 +11,13 @@ import logo from '../../assets/logo.svg';
 export default function Profile() {
     const [flights, setFlights] = useState([]);
     const airlineId = localStorage.getItem('airlineId');
+
+    const history = useHistory();
+
+    function handleLogout(){
+        localStorage.clear();
+        history.push('/');
+    }
 
     async function handleDelete(id){
         try {
@@ -41,7 +48,7 @@ export default function Profile() {
                 <img src={logo} alt="FGAirlines" />
                 
                 <Link className="button" to="/flights/new">Cadastrar novo voo</Link>
-                <button type="button">
+                <button type="button" onClick={handleLogout}>
                     <FiPower size={24} color="#ffffff" />
                 </button>
             </header>
