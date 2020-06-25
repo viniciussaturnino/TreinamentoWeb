@@ -12,6 +12,19 @@ export default function Profile() {
     const [flights, setFlights] = useState([]);
     const airlineId = localStorage.getItem('airlineId');
 
+    async function handleDelete(id){
+        try {
+            await api.delete(`flights/${id}`, {
+                headers: {
+                    Authorization: airlineId,
+                }
+            })
+            setFlights(flights.filter(flight => flight.id !== id));
+        } catch (err) {
+            alert('Não foi possível deletar este voo');
+        }
+    }
+
     useEffect(() => {
         api.get('profile', {
             headers: {
@@ -47,7 +60,7 @@ export default function Profile() {
                         <strong>PREÇO:</strong>
                         <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(flight.value)}</p>
 
-                        <button type="button">
+                        <button type="button" onClick={() => handleDelete(flight.id)}>
                             <FiTrash2 size={20} color="#17333C" />
                         </button>
                     </li>
