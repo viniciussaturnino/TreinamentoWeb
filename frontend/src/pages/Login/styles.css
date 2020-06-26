@@ -24,8 +24,12 @@
 
 .login-container section.form form h1{
     font-size: 32px;
-    margin-bottom: 32px;
+    margin-bottom: 15px;
     font-weight: 300;
+}
+
+.login-container section.form form input.inputLogin{
+    margin-bottom: 5px;
 }
 
 .big-plane{

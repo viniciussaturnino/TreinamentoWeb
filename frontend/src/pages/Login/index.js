@@ -9,19 +9,23 @@ import logo from '../../assets/big-logo.svg';
 import plane from '../../assets/big-plane.svg'
 
 export default function Login() {
-    const [id, setId] = useState('');
+    // const [id, setId] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const history = useHistory();
 
     async function handleLogin(e){
         e.preventDefault();
         try {
-            const response = await api.post('sessions', { id });
-            localStorage.setItem('airlineId', id);
+            const response = await api.post('sessions', { email, password });
+            localStorage.setItem('airlineEmail', email);
+            localStorage.setItem('airlinePassword', password);
             localStorage.setItem('airlineName', response.data.name);
+            localStorage.setItem('airlineId', response.data.id);
             history.push('/profile');
         } catch (err) {
-            alert('Erro ao tentar logar, tente novamente');
+            alert('Email ou Senha não correspondem! Tente novamente');
         }
     }
 
@@ -33,7 +37,8 @@ export default function Login() {
                 <form onSubmit={handleLogin}>
                     <h1>Faça seu login</h1>
 
-                    <input placeholder="Sua ID" value={id} onChange={e => setId(e.target.value)} />
+                    <input className="inputLogin" placeholder="Seu email" value={email} onChange={e => setEmail(e.target.value)} />
+                    <input className="inputLogin" placeholder="Sua senha" value={password} onChange={e => setPassword(e.target.value)} />
                     <button className="button" type="submit">Entrar</button>
 
                     <Link className="back-link" to="/register">

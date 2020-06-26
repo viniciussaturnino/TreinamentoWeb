@@ -10,6 +10,7 @@ import logo from '../../assets/logo.svg';
 export default function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [city, setCity] = useState('');
     const [uf, setUf] = useState('');
 
@@ -22,6 +23,7 @@ export default function Register() {
         const data = {
             name,
             email,
+            password,
             city,
             uf,
         };
@@ -29,7 +31,7 @@ export default function Register() {
         try{
             const response = await api.post('airlines',data);
             // alert(`Seu ID de acesso: ${response.data.id}`);
-            alert('Cadastro realizado com sucesso, seja bem vinda a nossa plataforma!');
+            alert(`Cadastro realizado com sucesso, seja bem vinda a nossa plataforma ${response.data.name}!`);
             history.push('/');
         } catch(err){
             alert('Erro no cadastro, tente novamente.');
@@ -63,6 +65,11 @@ export default function Register() {
                         onChange={e => setEmail(e.target.value)}
                     />
                     <input
+                        placeholder="Senha"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
+                    <input
                         placeholder="Cidade" 
                         value={city}
                         onChange={e => setCity(e.target.value)}
@@ -75,8 +82,6 @@ export default function Register() {
                         />
                         <button type="submit">Cadastrar</button>
                     </div>
-                    
-                        
                 </form>
             </div>
         </div>
