@@ -28,7 +28,8 @@ export default function Register() {
 
         try{
             const response = await api.post('airlines',data);
-            alert(`Seu ID de acesso: ${response.data.id}`);
+            // alert(`Seu ID de acesso: ${response.data.id}`);
+            alert('Cadastro realizado com sucesso, seja bem vinda a nossa plataforma!');
             history.push('/');
         } catch(err){
             alert('Erro no cadastro, tente novamente.');
