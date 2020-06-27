@@ -38,7 +38,7 @@ export default function Login() {
                     <h1>Faça seu login</h1>
 
                     <input className="inputLogin" placeholder="Seu email" value={email} onChange={e => setEmail(e.target.value)} />
-                    <input className="inputLogin" placeholder="Sua senha" value={password} onChange={e => setPassword(e.target.value)} />
+                    <input type="password" className="inputLogin" placeholder="Sua senha" value={password} onChange={e => setPassword(e.target.value)} />
                     <button className="button" type="submit">Entrar</button>
 
                     <Link className="back-link" to="/register">

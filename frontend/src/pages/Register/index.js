@@ -65,6 +65,7 @@ export default function Register() {
                         onChange={e => setEmail(e.target.value)}
                     />
                     <input
+                        type="password"
                         placeholder="Senha"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
