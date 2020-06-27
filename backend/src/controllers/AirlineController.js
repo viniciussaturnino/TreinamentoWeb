@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+const bcrypt = require('bcrypt');
 const connection = require('../database/connection');
 
 module.exports = {
@@ -12,18 +13,24 @@ module.exports = {
     // Creation route for a new airline
     async create (request, response) {
         const {name, email, password, city, uf} = request.body;
-        // create a random ID
-        const id = crypto.randomBytes(4).toString('HEX');
-    
-        await connection('airlines').insert({
-            id,
-            name,
-            email,
-            password,
-            city,
-            uf
-        })
-    
-        return response.json({ name });
+
+        const user = await connection('airlines').where('email', email).select('email').first();
+        if(user)
+            return response.status(400).send({ error: 'Linha Aérea já cadastrada!' });
+        else{
+            // create a random ID
+            const id = crypto.randomBytes(4).toString('HEX');
+        
+            await connection('airlines').insert({
+                id,
+                name,
+                email,
+                password,
+                city,
+                uf
+            })
+        
+            return response.json({ name });
+        }
     }
 }
