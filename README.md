@@ -4,7 +4,7 @@
 
 <img src="./img/demo.gif" />
 
-Essa é uma aplicação desenvolvida usando **Node JS** para o backend e **React JS** para o frontend. A aplicação se resume em um simples sistema de cadastro de linhas aéreas na plataforma e cadastro de voos pelas suas determinadas linhas. Foi desenvolvido a partir de uma ideia antiga na disciplina de Orientação a Objetos na faculdade. A aplicação original foi desenvolvida em **Ruby on Rails** e atualizada para as tecnologias citadas anteriormente.
+Essa é uma aplicação desenvolvida usando **Node JS** para o backend e **React JS** para o frontend. A aplicação se resume em um simples sistema de cadastro de linhas aéreas na plataforma e cadastro de voos pelas suas determinadas linhas. Foi desenvolvido a partir de uma ideia antiga na disciplina de Orientação a Objetos na faculdade com meu amigo Mateus Gomes. A aplicação original foi desenvolvida em **Ruby on Rails** e atualizada para as tecnologias citadas anteriormente.
 
 ## Requisitos do Projeto:
 
