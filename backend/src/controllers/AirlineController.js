@@ -12,7 +12,7 @@ module.exports = {
 
     // Creation route for a new airline
     async create (request, response) {
-        const {name, email, password, city, uf} = request.body;
+        const {name, email, password1, city, uf} = request.body;
 
         const user = await connection('airlines').where('email', email).select('email').first();
         if(user)
@@ -20,6 +20,8 @@ module.exports = {
         else{
             // create a random ID
             const id = crypto.randomBytes(4).toString('HEX');
+            //encrypted password
+            const password = bcrypt.hashSync(password1, 10);
         
             await connection('airlines').insert({
                 id,
@@ -30,7 +32,7 @@ module.exports = {
                 uf
             })
         
-            return response.json({ name });
+            return response.json({ password });
         }
     }
 }
