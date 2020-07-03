@@ -7,6 +7,8 @@ exports.up = function(knex) {
       table.string('password').notNullable();
       table.string('city').notNullable();
       table.string('uf', 2).notNullable();
+      table.string('token').notNullable();
+      table.date('tokenExpires').notNullable();
   });
 };
 

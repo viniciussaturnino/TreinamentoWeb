@@ -22,6 +22,10 @@ module.exports = {
             const id = crypto.randomBytes(4).toString('HEX');
             //encrypted password
             const password = bcrypt.hashSync(password1, 10);
+
+            const token = crypto.randomBytes(20).toString('HEX');
+            const now = new Date();
+            const tokenExpires = now;
         
             await connection('airlines').insert({
                 id,
@@ -29,10 +33,12 @@ module.exports = {
                 email,
                 password,
                 city,
-                uf
+                uf,
+                token,
+                tokenExpires,
             })
         
-            return response.json({ password });
+            return response.json({ token });
         }
     }
 }
