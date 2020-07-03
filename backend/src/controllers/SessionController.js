@@ -1,4 +1,5 @@
 const connection = require('../database/connection');
+const bcrypt = require('bcrypt');
 
 module.exports = {
     async create(request, response){
@@ -9,7 +10,7 @@ module.exports = {
         if(!airline)
             return response.status(404).send({ error: 'Usuário inexistente' });
         
-        if(airline.password !== password)
+        if(!await bcrypt.compare(password, airline.password))
             return response.status(400).json({ error: 'Senha inválida' });
         
         return response.json(airline);
