@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import NewFlight from './pages/NewFlight';
 import ForgotPassword from './pages/ForgotPassword';
+import RecoverPassword from './pages/RecoverPassword';
 
 export default function Routes() {
     return (
@@ -16,6 +17,7 @@ export default function Routes() {
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/flights/new" component={NewFlight} />
                 <Route path="/forgot_password" component={ForgotPassword} />
+                <Route path="/recover_password" component={RecoverPassword} />
             </Switch>
         </BrowserRouter>
     );
