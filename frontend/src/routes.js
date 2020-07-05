@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import NewFlight from './pages/NewFlight';
+import ForgotPassword from './pages/ForgotPassword';
 
 export default function Routes() {
     return (
@@ -14,6 +15,7 @@ export default function Routes() {
                 <Route path="/register" component={Register} />
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/flights/new" component={NewFlight} />
+                <Route path="/forgot_password" component={ForgotPassword} />
             </Switch>
         </BrowserRouter>
     );
